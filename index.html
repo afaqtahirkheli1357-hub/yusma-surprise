@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Surprise From Yusma</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Georgia, serif;
+    background:linear-gradient(135deg,#ffd6e8,#fff5fa);
+    overflow:hidden;
+    text-align:center;
+    color:#6b1745;
+}
+
+.page{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:20px;
+}
+
+h1{
+    font-size:50px;
+    color:#c2185b;
+    animation:glow 2s infinite alternate;
+}
+
+h2{
+    font-size:28px;
+    margin:20px;
+    color:#8e245f;
+}
+
+p{
+    max-width:650px;
+    font-size:20px;
+    line-height:1.7;
+}
+
+button{
+    margin-top:35px;
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+    background:#c2185b;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+#surprise{
+    display:none;
+}
+
+.poem{
+    margin-top:25px;
+    font-size:22px;
+    font-style:italic;
+    color:#9c276b;
+}
+
+.end{
+    margin-top:35px;
+    font-size:28px;
+    color:#c2185b;
+}
+
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px pink;
+    }
+    to{
+        text-shadow:0 0 30px white;
+    }
+}
+
+
+.floating{
+    position:absolute;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-100px);
+    }
+    to{
+        transform:translateY(110vh);
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="page" id="home">
+
+<h1>✨ Surprise From Yusma ✨</h1>
+
+<h2>❤️ To His Favourite Person ❤️</h2>
+
+<p>
+A little surprise made with love, just for someone who makes life more beautiful.
+Some people enter our lives and become a special part of our hearts.
+</p>
+
+<button onclick="openSurprise()">
+Open Your Surprise 💌
+</button>
+
+</div>
+
+
+
+<div class="page" id="surprise">
+
+<h1>💖 A Message From Yusma 💖</h1>
+
+<p>
+You are the smile behind my happiest moments,
+the peace in my busy days, and the person who makes ordinary moments feel magical.
+
+No matter where life takes us,
+you will always have a special place in my heart.
+</p>
+
+
+<div class="poem">
+
+"Your smile is my favourite sight,<br>
+Your happiness is my favourite light.<br>
+Among all the stars above the sky,<br>
+You are the reason my dreams fly."
+
+</div>
+
+
+<div class="poem">
+
+"Some hearts are beautiful to find,<br>
+Some souls are impossible to forget."
+
+</div>
+
+
+<div class="end">
+
+Forever special ❤️<br>
+From Yusma ✨
+
+</div>
+
+</div>
+
+
+
+<script>
+
+function openSurprise(){
+
+document.getElementById("home").style.display="none";
+document.getElementById("surprise").style.display="flex";
+
+
+let things=[
+"✨",
+"⭐",
+"🌸",
+"🌹",
+"🐱",
+"💖"
+];
+
+
+for(let i=0;i<100;i++){
+
+let item=document.createElement("div");
+
+item.className="floating";
+
+item.innerHTML=things[Math.floor(Math.random()*things.length)];
+
+item.style.left=Math.random()*100+"%";
+
+item.style.fontSize=
+(20+Math.random()*35)+"px";
+
+item.style.animationDuration=
+(3+Math.random()*6)+"s";
+
+document.body.appendChild(item);
+
+}
+
+}
+
+</script>
+
+
+</body>
+</html>
